@@ -23,11 +23,11 @@ Of course, as part of an organization, I run the Microsoft Office products for e
 
 ## Analog
 
-While I am tech person and do enjoy my tech tools, I also enjoy some analog tools that I think help me work better.  I like to carry around a [Field Notes](https://fieldnotesbrand.com) notebook to make lists, do some calculations or to jot down ideas that come to me.  I also use them for various purposes throughout my house and car to track things like my reading and when I fill me car up with gas.  In conjunction with my Field Notes, I like to use [Blackwing Pencils](https://blackwing602.com).  I know they are just pencils, but they are the best pencils I have ever used, come at me.
+While I am tech person and do enjoy my tech tools, I also enjoy some analog tools that I think help me work better.  I like to carry around a [Field Notes](https://fieldnotesbrand.com) notebook to make lists, do some calculations or to jot down ideas that come to me.  I also use them for various purposes throughout my house and car to track things like my reading and when I fill my car up with gas.  In conjunction with my Field Notes, I like to use [Blackwing Pencils](https://blackwing602.com).  I know they are just pencils, but they are the best pencils I have ever used, come at me.
 
 ## Carry
 
-I carry everything I need to go with me in an older [Timbuk2](https://www.timbuk2.com) Command messenger bag that I bought off of Amazon for cheap.  The bag is still in pretty good shape, but I will be sad when it wears out because they don't make them like that anymore, but in style and structure.  I carry various cables around to make sure that I can charge things if I need to.  I used to carry a powerbank with me, but I found out I never used it, only other people around me used it, so let them start carrying their own.  I have tried to make my carry as light as possible and only include what I need versus trying to plan for all eventualities.
+I carry everything I need to go with me in an older [Timbuk2](https://www.timbuk2.com) Command messenger bag that I bought off of Amazon for cheap.  The bag is still in pretty good shape, but I will be sad when it wears out because they don't make them like that anymore, both in style and structure.  I carry various cables around to make sure that I can charge things if I need to.  I used to carry a powerbank with me, but I found out I never used it, only other people around me used it, so let them start carrying their own.  I have tried to make my carry as light as possible and only include what I need versus trying to plan for all eventualities.
 
 ## What is my dream setup
 
