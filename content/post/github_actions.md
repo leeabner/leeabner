@@ -119,7 +119,7 @@ In the repository on Github, go to Settings, then Secrets and variables, then Ac
 
 ## The workflow
 
-Github looks for workflows in the `.github/workflows` folder of the repository, so I created a file there called deploy.yml.
+Github looks for workflows in the `.github/workflows` folder of the repository, so I created a file there called deploy.yml.  This is really all Claude's work here.  I explained what I was trying to do and it created the entire workflow for me.  I can read yaml enough to read through what it is doing, but it would have taken me far longer to figure out how to write all of this myself.  To me that is what AI is to be used for.  Could I have done it, probably with a lot of time and effort, but I saved myself a couple of days of research by using Claude.
 
 ``` yaml
 name: Build and deploy blog
