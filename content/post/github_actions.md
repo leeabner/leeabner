@@ -62,7 +62,7 @@ The role has two parts, a trust policy that says who is allowed to use the role 
 }
 ```
 
-The most important line is the `sub` condition.  That is what limits the role to my one repository.  If you leave that out, or use a wildcard for the repository, any repository on Github could try to use your role.  The `environment:production` part matches the Github environment that I set on the deploy job in the workflow, which I will get to in a minute.
+The most important line is the `token.actions.githubusercontent.com:sub` condition.  That is what limits the role to my one repository.  If you leave that out, or use a wildcard for the repository, any repository on Github could try to use your role.  The `environment:production` part matches the Github environment that I set on the deploy job in the workflow, which I will get to in a minute.
 
 The permissions policy is almost exactly the same one I used for the IAM user in my previous post, saved as permissions-policy.json.  It only allows what the deploy needs.
 
