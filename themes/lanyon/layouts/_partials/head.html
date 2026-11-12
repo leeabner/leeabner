@@ -1,0 +1,43 @@
+<head>
+  <meta charset="utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>
+    {{- if .IsHome -}}
+      {{ site.Title }} &middot; {{ site.Params.Tagline }}
+    {{- else -}}
+      {{ .Title }} &middot; {{ site.Title }}
+    {{- end -}}
+  </title>
+
+  {{- $description := .Description | default .Summary | default site.Params.Tagline | plainify | truncate 160 }}
+  <meta name="description" content="{{ $description }}">
+  <link rel="canonical" href="{{ .Permalink }}">
+  {{ partial "opengraph.html" . }}
+
+  <!-- CSS: bundled, minified and fingerprinted from the theme's assets/css -->
+  {{- $css := slice
+      (resources.Get "css/poole.css")
+      (resources.Get "css/syntax.css")
+      (resources.Get "css/lanyon.css")
+    | resources.Concat "css/lanyon.bundle.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+  {{- if not site.Params.disableFonts }}
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400&display=swap">
+  <script src="https://kit.fontawesome.com/e1452c036a.js" crossorigin="anonymous"></script>
+  {{- end }}
+  {{- range site.Params.customCSS }}
+  <link rel="stylesheet" href="{{ . | relURL }}">
+  {{- end }}
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon" href="{{ "assets/apple-touch-icon.png" | relURL }}">
+  <link rel="icon" href="{{ "assets/favicon.ico" | relURL }}">
+
+  <!-- RSS -->
+  {{- with site.Home.OutputFormats.Get "rss" }}
+  <link rel="alternate" type="{{ .MediaType.Type }}" title="{{ site.Title }}" href="{{ .Permalink }}">
+  {{- end }}
+</head>

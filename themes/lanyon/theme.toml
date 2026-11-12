@@ -5,7 +5,7 @@ description = "Lanyon-Hugo is a theme designed for blogging."
 homepage = "https://github.com/tummychow/lanyon-hugo"
 tags = ["blog",]
 features = ["blog", ]
-min_version = 0.14
+min_version = "0.146.0"
 
 [author]
     name = "tummychow"

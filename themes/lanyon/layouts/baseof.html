@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<html lang="{{ site.Language.Locale | default "en" }}">
 
   {{ partial "head.html" . }}
 
@@ -13,10 +13,18 @@
       <div class="masthead">
         <div class="container">
           <h3 class="masthead-title">
-            <a href="/" title="Home">{{ .Site.Params.Title }}</a>
-            <small>{{ .Site.Params.Tagline }}</small>
+            <a href="{{ site.Home.RelPermalink }}" title="Home">{{ site.Title }}</a>
+            <small>{{ site.Params.Tagline }}</small>
           </h3>
         </div>
       </div>
 
       <div class="container content">
+        {{ block "main" . }}{{ end }}
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+    {{ partial "google_analytics.html" . }}
+  </body>
+</html>

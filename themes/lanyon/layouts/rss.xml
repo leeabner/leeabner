@@ -1,22 +1,26 @@
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{{ .Site.Title }} </title>
+    <title>{{ site.Title }}</title>
     <link>{{ .Permalink }}</link>
-    <language>en-us</language>
-    <author>{{ .Site.Params.Author }}</author>
-    <rights>(C) {{ now.Year }}</rights>
-    <updated>{{ .Date }}</updated>
-
-    {{ range where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
-      <item>
-        <title>{{ .Title }}</title>
-        <link>{{ .Permalink }}</link>
-        <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 MST" }}</pubDate>
-        <author>{{ .Site.Params.Author }}</author>
-        <guid>{{ .Permalink }}</guid>
-        <description>{{ .Content | html }}</description>
-      </item>
-    {{ end }}
-
+    <description>{{ site.Params.Tagline }}</description>
+    <language>{{ site.Language.Locale | default "en" }}</language>
+    <copyright>(C) {{ now.Year }}</copyright>
+    {{- $pages := where site.RegularPages "Type" "in" site.MainSections }}
+    {{- with $pages }}
+    <lastBuildDate>{{ (index . 0).Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</lastBuildDate>
+    {{- end }}
+    {{- with .OutputFormats.Get "rss" }}
+    {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType.Type | safeHTML }}
+    {{- end }}
+    {{- range $pages }}
+    <item>
+      <title>{{ .Title }}</title>
+      <link>{{ .Permalink }}</link>
+      <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</pubDate>
+      <guid>{{ .Permalink }}</guid>
+      <description>{{ .Content | transform.XMLEscape | safeHTML }}</description>
+    </item>
+    {{- end }}
   </channel>
 </rss>

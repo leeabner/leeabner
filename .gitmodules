@@ -1,6 +1,0 @@
-[submodule "themes/lanyon"]
-	path = themes/lanyon
-	url = https://github.com/tummychow/lanyon-hugo.git
-[submodule "themes/PaperMod"]
-	path = themes/PaperMod
-	url = https://github.com/adityatelange/hugo-PaperMod.git
