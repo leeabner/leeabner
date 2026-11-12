@@ -1,0 +1,43 @@
+<!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" aria-label="Toggle sidebar">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    {{- with site.Params.description }}
+    {{ . | markdownify }}
+    {{- else }}
+    <img src="{{ "img/learning_bulb2.png" | relURL }}" alt="">
+    <p>{{ site.Params.Tagline }}</p>
+    {{- end }}
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item{{ if .IsHome }} active{{ end }}" href="{{ site.Home.RelPermalink }}">Home</a>
+    <a class="sidebar-nav-item{{ if eq .RelPermalink "/post/" }} active{{ end }}" href="{{ "post/" | relURL }}">Posts</a>
+    {{- $currentPage := . }}
+    {{- range site.Menus.main }}
+    <a class="sidebar-nav-item{{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{ end }}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+    {{- end }}
+
+    {{- /* Any page with `sidebar: true` in its front matter gets a link. */}}
+    {{- range where site.Pages.ByWeight "Params.sidebar" "!=" nil }}
+    <a class="sidebar-nav-item{{ if eq . $currentPage }} active{{ end }}" href="{{ .RelPermalink }}">{{ .Title }}</a>
+    {{- end }}
+    <a class="sidebar-nav-item" href="{{ "tags/" | relURL }}">Content Tags</a>
+    <a class="sidebar-nav-item" href="{{ "categories/" | relURL }}">Post Categories</a>
+
+    {{- with site.Params.Github }}
+    <a class="sidebar-nav-item" href="{{ .url }}/archive/{{ .head }}.zip">Download</a>
+    <a class="sidebar-nav-item" href="{{ .url }}">GitHub project</a>
+    <span class="sidebar-nav-item">Currently on {{ .head }}</span>
+    {{- end }}
+  </nav>
+
+  <div class="sidebar-item">
+    <a href="https://github.com/leeabner" aria-label="GitHub"><i class="fa-brands fa-square-github fa-2xl"></i></a>
+    <p></p>
+    <p>&copy; {{ now.Year }}. All rights reserved.</p>
+  </div>
+</div>

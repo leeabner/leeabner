@@ -1,8 +1,7 @@
-{{ partial "default_head.html" . }}
-
+{{ define "main" }}
 <div class="post">
   <h1 class="post-title">{{ .Title }}</h1>
-  <span class="post-date">{{ .Site.Params.DateForm | default "Jan 2, 2006" | .Date.Format }}</span>
+  <span class="post-date">{{ site.Params.DateForm | default "Jan 2, 2006" | .Date.Format }}</span>
   {{ .Content }}
   {{ with .GetTerms "categories" }}
   <p>
@@ -21,11 +20,10 @@
     {{ end }}
   </p>
   {{ end }}
-  {{- if .Site.Config.Services.Disqus.Shortname -}}
+  {{- if site.Config.Services.Disqus.Shortname -}}
   <hr>
   <h2>Comments</h2>
-  {{ template "_internal/disqus.html" . }}
+  {{ partial "disqus.html" . }}
   {{ end -}}
 </div>
-
-{{ partial "default_foot.html" . }}
+{{ end }}

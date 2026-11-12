@@ -1,0 +1,11 @@
+baseURL = "https://blog.leeabner.com/"
+locale = "en-US"
+title = "Lee Abner's Blog"
+theme = "lanyon"
+
+[params]
+  Tagline = "A journey of growth and learning in the technology field, with an emphasis on virtualization, cloud, and security"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"

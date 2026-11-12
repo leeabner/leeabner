@@ -1,13 +1,11 @@
-{{ partial "default_head.html" . }}
-
-<!-- Space delimited list of page types -->
-{{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
+{{ define "main" }}
+{{ $paginator := .Paginate (where site.RegularPages "Type" "in" site.MainSections) }}
 
 <div class="posts">
-  {{ range .Paginator.Pages }}
+  {{ range $paginator.Pages }}
     <div class="post">
-        <h1 class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
-        <span class="post-date">{{ .Site.Params.DateForm | default "Jan 2, 2006" | .Date.Format }}</span>
+        <h1 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+        <span class="post-date">{{ site.Params.DateForm | default "Jan 2, 2006" | .Date.Format }}</span>
         {{ .Content }}
     </div>
   {{ end }}
@@ -26,5 +24,4 @@
   <span class="pagination-item newer">Newer</span>
   {{ end }}
 </div>
-
-{{ partial "default_foot.html" . }}
+{{ end }}

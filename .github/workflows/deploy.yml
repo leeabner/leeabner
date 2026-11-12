@@ -17,7 +17,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  HUGO_VERSION: 0.168.0
+  HUGO_VERSION: 0.169.0
   BUCKET: blog-leeabner
   DISTRIBUTION_ID: E3AB7CPXPIW8TJ
 
@@ -25,9 +25,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          submodules: true # themes/lanyon and themes/PaperMod are submodules
+      - uses: actions/checkout@v4 # themes/lanyon is committed in the repo, no submodules
 
       - name: Install Hugo
         run: |
