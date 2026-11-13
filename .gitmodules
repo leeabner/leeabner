@@ -1,0 +1,3 @@
+[submodule "themes/lanyon-next"]
+	path = themes/lanyon-next
+	url = https://github.com/leeabner/lanyon-next.git

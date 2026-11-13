@@ -25,7 +25,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4 # themes/lanyon is committed in the repo, no submodules
+      - uses: actions/checkout@v4
+        with:
+          submodules: true # themes/lanyon-next is a git submodule
 
       - name: Install Hugo
         run: |
