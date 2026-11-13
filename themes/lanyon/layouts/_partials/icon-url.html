@@ -1,0 +1,13 @@
+{{- /*
+  Returns the URL for an icon in the static directory (the site's or the
+  theme's), with a short content hash appended (?v=...) so browsers re-fetch
+  it when the file changes. If the file cannot be found, the plain URL is
+  returned.
+*/ -}}
+{{- $path := strings.TrimPrefix "/" . -}}
+{{- $url := $path | relURL -}}
+{{- $file := printf "static/%s" $path -}}
+{{- if fileExists $file -}}
+  {{- $url = printf "%s?v=%s" $url (substr (readFile $file | md5) 0 8) -}}
+{{- end -}}
+{{- return $url -}}
