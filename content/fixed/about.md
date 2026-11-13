@@ -2,7 +2,6 @@
 title: "About"
 date: 2018-03-17T10:30:41-05:00
 draft: false
-sidebar: true
 ---
 
 

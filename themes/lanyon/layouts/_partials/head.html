@@ -26,15 +26,20 @@
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
   {{- if not site.Params.disableFonts }}
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400&display=swap">
-  <script src="https://kit.fontawesome.com/e1452c036a.js" crossorigin="anonymous"></script>
+  {{- end }}
+  {{- /* Optional Font Awesome kit, needed for icons in params.social. */}}
+  {{- with site.Params.fontAwesomeKit }}
+  <script src="https://kit.fontawesome.com/{{ . }}.js" crossorigin="anonymous"></script>
   {{- end }}
   {{- range site.Params.customCSS }}
   <link rel="stylesheet" href="{{ . | relURL }}">
   {{- end }}
 
   <!-- Icons -->
-  <link rel="apple-touch-icon" href="{{ "assets/apple-touch-icon.png" | relURL }}">
-  <link rel="icon" href="{{ "assets/favicon.ico" | relURL }}">
+  {{- with site.Params.appleTouchIcon }}
+  <link rel="apple-touch-icon" href="{{ . | relURL }}">
+  {{- end }}
+  <link rel="icon" href="{{ site.Params.favicon | default "assets/favicon.ico" | relURL }}">
 
   <!-- RSS -->
   {{- with site.Home.OutputFormats.Get "rss" }}

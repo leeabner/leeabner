@@ -4,7 +4,7 @@ date: 2026-06-26T10:53:55-05:00
 draft: false
 description: "How to automate the updating of the Blog files"
 categories: ["Tutorial"]
-tags: ["aws", "hugo" ]
+tags: ["AWS", "hugo"]
 ---
 
 While it was fairly easy to manually copy the files for the blog up to my S3 bucket and then create an invalidation in Cloudfront, I decided that I wanted to streamline that process and see if I could make it even easier.  I want to automate it all using the AWS cli and write a BASH script that will do the deploy.  In the future I might move towards Github actions when I push an update to Github it will do the update, but baby steps.

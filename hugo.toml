@@ -5,6 +5,32 @@ theme = "lanyon"
 
 [params]
   Tagline = "A journey of growth and learning in the technology field, with an emphasis on virtualization, cloud, and security"
+  sidebarImage = "img/learning_bulb2.png"
+  appleTouchIcon = "assets/apple-touch-icon.png"
+  fontAwesomeKit = "e1452c036a"
+
+  [[params.social]]
+    name = "GitHub"
+    url = "https://github.com/leeabner"
+    icon = "fa-brands fa-square-github fa-2xl"
+
+# Sidebar navigation, in order. "Home" is always added first by the theme.
+[[menus.main]]
+  name = "Posts"
+  pageRef = "/post"
+  weight = 10
+[[menus.main]]
+  name = "About"
+  pageRef = "/fixed/about"
+  weight = 20
+[[menus.main]]
+  name = "Content Tags"
+  pageRef = "/tags"
+  weight = 30
+[[menus.main]]
+  name = "Post Categories"
+  pageRef = "/categories"
+  weight = 40
 
 [taxonomies]
   tag = "tags"
