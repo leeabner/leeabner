@@ -37,9 +37,9 @@
 
   <!-- Icons -->
   {{- with site.Params.appleTouchIcon }}
-  <link rel="apple-touch-icon" href="{{ . | relURL }}">
+  <link rel="apple-touch-icon" href="{{ partial "icon-url.html" . }}">
   {{- end }}
-  <link rel="icon" href="{{ site.Params.favicon | default "assets/favicon.ico" | relURL }}">
+  <link rel="icon" href="{{ partial "icon-url.html" (site.Params.favicon | default "assets/favicon.ico") }}">
 
   <!-- RSS -->
   {{- with site.Home.OutputFormats.Get "rss" }}
